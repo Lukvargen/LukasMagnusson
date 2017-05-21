@@ -1,0 +1,11 @@
+h1{
+    color:darkgrey;
+    text-align:center;
+    position:relative;
+    font-size:60px;
+    font-family:'Bookman Old Style';
+}
+
+body{
+    background: url(backflip.jpeg);
+}
