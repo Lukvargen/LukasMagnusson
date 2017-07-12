@@ -16,20 +16,22 @@ class Resource {
 let food = new Resource('food',0,100,1,1,1,0,100,1);
 let wood = new Resource('wood',0,100,1,1,1,0,100,1);
 let stone = new Resource('stone',0,100,1,1,1,0,100,1);
+//test
 
 
+//fixa detta!!
 
-//fixa detta!!!
-/*
 class Building {
 	constructor(name, total, foodcost) {
 		this.name = name;
 		this.total = total;
-		this.cost:food = foodcost;
+		this.cost = {
+			this.food : foodcost;
+		}
 	}
 }
 let woodhouse = new Building('woodhouse',0,);
-*/
+
 document.getElementById('gatherfood').addEventListener('click', function(){gather(food)});
 document.getElementById('gatherwood').addEventListener('click', function(){gather(wood)});
 document.getElementById('gatherstone').addEventListener('click', function(){gather(stone)});
@@ -59,10 +61,14 @@ function lvlup(resource) {
 	resource.increment = 1 * Math.pow(2, resource.lvl - 1);
 }
 
+
+//Använd toFixed() istället. skriver man ett + före talet så skriver den bara decimalerna om de spelar roll så att 1 inte blir 1.0
+/*
 function round(input) {
     var output = Math.round(input * 100) / 100;
     return output;
-}
+} 
+*/
 
 
 function build(building) {
@@ -77,9 +83,9 @@ function updatetext() {
 	document.getElementById('woodtext').innerHTML = "Trä: "+ wood.total + "/" + wood.max;
 	document.getElementById('stonetext').innerHTML = "Sten: "+ stone.total + "/" + stone.max;
 
-	document.getElementById('foodexptext').innerHTML = "Level: " + food.lvl + " Exp: " + food.exp + "/" + food.maxexp + " (" + round((food.exp / food.maxexp) * 100)  + "%) ";
-	document.getElementById('woodexptext').innerHTML = "Level: " + wood.lvl + " Exp: " + wood.exp + "/" + wood.maxexp + " (" + round((wood.exp / wood.maxexp) * 100) + "%) ";
-	document.getElementById('stoneexptext').innerHTML = "Level: " + stone.lvl + " Exp: " + stone.exp + "/" + stone.maxexp + " (" + round((stone.exp / stone.maxexp)) * 100 + "%) ";
+	document.getElementById('foodexptext').innerHTML = "Level: " + food.lvl + " Exp: " + food.exp + "/" + food.maxexp + " (" + ((food.exp / food.maxexp) * 100).toFixed(0)  + "%) ";
+	document.getElementById('woodexptext').innerHTML = "Level: " + wood.lvl + " Exp: " + wood.exp + "/" + wood.maxexp + " (" + ((wood.exp / wood.maxexp) * 100).toFixed(0) + "%) ";
+	document.getElementById('stoneexptext').innerHTML = "Level: " + stone.lvl + " Exp: " + stone.exp + "/" + stone.maxexp + " (" + ((stone.exp / stone.maxexp) * 100).toFixed(0) + "%) ";
 }
 function updateprogressbars() {
 	progressbar(document.getElementById('foodexpbar'),food.exp,food.maxexp);
