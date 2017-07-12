@@ -1,20 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lukas Magnusson</title>
-    <link href="style.css" type="text/css" rel="stylesheet" />
+	<title>yeh</title>
+
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
-
 <body>
-    <h1>Lukas Hemsida!</h1>
+<div class="topbar">
+	<p class="topbartextleft">Gjort Av </p>
+	<a href="#" class="topbartextleft">Lukas Magnusson</a>
+</div>
+<div class="resources">
+	<h2 style="text-align: center; height: 50px; padding: 5px;">Resurser</h2>
+	<div class="resourcescontent">
+		<button class="btn" id="gatherfood">Samla Mat</button>
+		<div class="resourcestext" id="foodtext">Mat: 0/100</div>
+		
+		<div class="progresscontent">
+				<div id="foodexptext">Exp: 0 / 100 (0%) Level: 1</div>
+			<div class="progressbar">
+				<div class="progress" id="foodexpbar"></div>
+			</div>
+		</div>
+
+	</div>
+	<div class="resourcescontent">
+		<button class="btn" id="gatherwood">Samla Trä</button>
+		<div class="resourcestext" id="woodtext">Trä: 0/100</div>
+
+		<div class="progresscontent">
+			<div  id="woodexptext">Exp: 0 / 100 (0%) Level: 1</div>
+			<div class="progressbar">
+				<div class="progress" id="woodexpbar"></div>
+			</div>
+		</div>
+	</div>
+	<div class="resourcescontent">
+		<button class="btn" id="gatherstone">Samla Sten</button>
+		<div class="resourcestext" id="stonetext">Sten: 0/100</div>
+		
+		<div class="progresscontent">
+			<div id="stoneexptext">Exp: 0 / 100 (0%) Level: 1</div>
+			<div class="progressbar">
+				<div class="progress" id="stoneexpbar"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="panes">
+	<div>
+		<button class="panebutton selected" id="buildingbutton">Byggnader</button>
+		<button class="panebutton" id="upgradebutton">Uppgraderningar</button>
+		<button class="panebutton" id="workbutton">Arbeten</button>
+	</div>
+
+	<div class="panediv" id="buildingspane">
+		<h2 class="heading">Byggnader</h2>
+
+		<div class="building">
+			<button class="btn btn-building" id="woodhouse">Trähus</button>
+			<div class="buildingtext">sometext</div>
+		</div>
+		<div class="building">
+			<button class="btn btn-building" id="woodhouse">någonting</button>
+			<div class="buildingtext">sometext</div>
+		</div>
+
+		<div class="building">
+			<button class="btn btn-building" id="woodhouse">någotannat</button>
+			<div class="buildingtext">sometext</div>
+		</div>
+
+		
+	</div>
+
+	<div class="panediv" id="upgradespane">
+		<h2 class="heading">Uppgraderningar</h2>
+	</div>
 
 
+	<div class="panediv" id="workspane">
+		<h2 class="heading">Arbeten</h2>
+	</div>
+
+</div>
+
+	
+
+	<script type="text/javascript" src="main.js"></script>
 </body>
-
-
-
-
-
-
-
 </html>
