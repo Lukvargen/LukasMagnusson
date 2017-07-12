@@ -19,16 +19,17 @@ let stone = new Resource('stone',0,100,1,1,1,0,100,1);
 
 
 
-//fixa detta!
+//fixa detta!!!
+/*
 class Building {
-	constructor(name, total, cost=food) {
+	constructor(name, total, foodcost) {
 		this.name = name;
 		this.total = total;
-		this.cost.food = cost.food;
+		this.cost:food = foodcost;
 	}
 }
 let woodhouse = new Building('woodhouse',0,);
-
+*/
 document.getElementById('gatherfood').addEventListener('click', function(){gather(food)});
 document.getElementById('gatherwood').addEventListener('click', function(){gather(wood)});
 document.getElementById('gatherstone').addEventListener('click', function(){gather(stone)});
@@ -76,9 +77,9 @@ function updatetext() {
 	document.getElementById('woodtext').innerHTML = "Trä: "+ wood.total + "/" + wood.max;
 	document.getElementById('stonetext').innerHTML = "Sten: "+ stone.total + "/" + stone.max;
 
-	document.getElementById('foodexptext').innerHTML = "Exp: " + food.exp + "/" + food.maxexp + " (" + round((food.exp / food.maxexp) * 100)  + "%) " + "Level: " + food.lvl;
-	document.getElementById('woodexptext').innerHTML = "Exp: " + wood.exp + "/" + wood.maxexp + " (" + round((wood.exp / wood.maxexp) * 100) + "%) " + "Level: " + wood.lvl;
-	document.getElementById('stoneexptext').innerHTML = "Exp: " + stone.exp + "/" + stone.maxexp + " (" + round((stone.exp / stone.maxexp)) * 100 + "%) " + "Level: " + stone.lvl;
+	document.getElementById('foodexptext').innerHTML = "Level: " + food.lvl + " Exp: " + food.exp + "/" + food.maxexp + " (" + round((food.exp / food.maxexp) * 100)  + "%) ";
+	document.getElementById('woodexptext').innerHTML = "Level: " + wood.lvl + " Exp: " + wood.exp + "/" + wood.maxexp + " (" + round((wood.exp / wood.maxexp) * 100) + "%) ";
+	document.getElementById('stoneexptext').innerHTML = "Level: " + stone.lvl + " Exp: " + stone.exp + "/" + stone.maxexp + " (" + round((stone.exp / stone.maxexp)) * 100 + "%) ";
 }
 function updateprogressbars() {
 	progressbar(document.getElementById('foodexpbar'),food.exp,food.maxexp);
